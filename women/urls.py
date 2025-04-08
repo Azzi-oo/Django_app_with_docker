@@ -8,10 +8,11 @@ from . import views
 register_converter(FourDigitYearConverter, "year")
 
 urlpatterns = [
-    path("", views.index),
-    path("cats/<int:cat_id>/", views.categories),
-    path("cats/<slug:cat_slug>/", views.categories_by_slug),
-    re_path("archive/<year4:year>/", views.archive),
+    path("", views.index, name="home"),
+    path("about/", views.about, name="about"),
+    path("cats/<int:cat_id>/", views.categories, name="cats_id"),
+    path("cats/<slug:cat_slug>/", views.categories_by_slug, name="cats_slug"),
+    re_path("archive/<year4:year>/", views.archive, name="archive"),
 ]
 
 # urlpatterns = [
