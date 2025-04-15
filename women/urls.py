@@ -11,8 +11,11 @@ urlpatterns = [
     path("", views.index, name="home"),
     path("about/", views.about, name="about"),
     path("cats/<int:cat_id>/", views.categories, name="cats_id"),
-    path("cats/<slug:cat_slug>/", views.categories_by_slug, name="cats_slug"),
-    re_path("archive/<year4:year>/", views.archive, name="archive"),
+    path('contact/', views.contact, name='contact'),
+    path("post/<slug:post_slug>/", views.show_post, name="post"),
+    path("login/", views.login, name="login"),
+    path('category/<slug:cat_slug>/', views.show_category, name='category'),
+    path('tag/<slug:tag_slug>/', views.show_tag_postlist, name='tag'),
 ]
 
 # urlpatterns = [
